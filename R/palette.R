@@ -2,8 +2,9 @@
 "yellow" = "#f2ff00"
 "green" = "#94ff3c"
 "turquoise" = "#09dea6"
-"blue" = "##065cc3"
-"indigo" = "#04048d"
+"blue" = "#0086ff"
+"indigo" = "#000074"
+
 
 YlGrBl_colours <- list(
   # add your colours as a named list here, i.e.
