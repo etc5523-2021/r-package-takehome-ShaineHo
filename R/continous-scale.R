@@ -1,19 +1,19 @@
 # This is where functions for your continous scale go
 
-scale_colour_NAME_seq_c <- function(name, direction = 1, amount = 0.2, ...) {
-  # check that name is in your palette
-  # throw an error if it isn't
+scale_colour_YlGrBl_seq_c <- function(name, direction = 1, amount = 1, ...) {
 
-  # set the low colour
+  stopifnot(name %in% YlGrBl_colours)
 
-  # set the high colour with colorspace pkg
+  low <-  unname(name)
 
-  # if direction is < 0 switch high and low
+  high <-  colorspace::lighten(name, amount = amount)
 
-  # pass everything on to ggplot2 color gradient
+   if (direction < 0){
+    low <-  colorspace::lighten(name, amount)
+    high <- name
+   }
 
-  ggplot2::scale_color_gradient(
-    ...
-  )
+   #pass everything on to ggplot2 color gradient
+   ggplot2::scale_color_gradient(high = high, low =low)
 
 }

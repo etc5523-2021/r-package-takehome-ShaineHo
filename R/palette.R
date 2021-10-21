@@ -5,10 +5,13 @@
 "blue" = "#0086ff"
 "indigo" = "#000074"
 
-
 YlGrBl_colours <- list(
   # add your colours as a named list here, i.e.
-  indigo, blue, turquoise, green , yellow
+  "yellow" = "#f2ff00",
+  "green" = "#94ff3c",
+  "turquoise" = "#09dea6",
+  "blue" = "#0086ff",
+  "indigo" = "#000074"
 )
 
 
@@ -24,9 +27,10 @@ YlGrBl_pal <- function(direction = 1) {
 
   YlGrBl_colours <- unname(unlist(YlGrBl_colours))
   if (direction < 1)
-    YlGrBl_colours
-  else
     rev(YlGrBl_colours)
+  else
+    YlGrBl_colours
+
   }
 }
 

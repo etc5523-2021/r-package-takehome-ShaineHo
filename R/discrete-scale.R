@@ -13,6 +13,5 @@ scale_fill_YlGrBl_d <- function(direction = 1, ...) {
   )
 }
 
-ggplot(sleep, aes(x = ID, y = extra, fill = group))+
-  geom_col(position = "dodge")+
-  scale_fill_YlGrBl_d()
+
+
