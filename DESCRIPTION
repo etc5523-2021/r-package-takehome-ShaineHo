@@ -1,5 +1,5 @@
 Package: YlGrBlPal
-Title: Yello Green Blue Color Scales for ggplot2
+Title: Yellow Green Blue Color Scales for ggplot2
 Version: 0.1.0
 Authors@R: 
   person(given = "Yin Shan",
@@ -17,6 +17,12 @@ BugReports: https://github.com/etc5523-2021/r-package-takehome-ShaineHo/issues
 Depends: 
     R (>= 2.10)
 Imports: 
-    colorspace,
     palmerpenguins,
-    ggplot2
+    ggplot2,
+    colorspace
+Suggests: 
+    rmarkdown,
+    knitr,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+VignetteBuilder: knitr

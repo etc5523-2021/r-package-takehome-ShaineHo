@@ -53,7 +53,7 @@ library(palmerpenguins)
 
 ### Example for discrete-scale
 
-```{r}
+```{r scale-color-discrete}
 ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
 geom_point(aes(color = species))+
 scale_colour_YlGrBl_d()+

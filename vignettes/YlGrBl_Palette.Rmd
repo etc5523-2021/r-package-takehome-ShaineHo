@@ -1,0 +1,79 @@
+---
+title: "Yellow Green Blue Color Scales for ggplot2"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{YlGrBl_Palette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  warning = FALSE,
+  message = FALSE,
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(YlGrBlPal)
+library(ggplot2)
+library(palmerpenguins)
+```
+
+# Description
+
+YlGrBlPal provides a set of colors including Yellow(#f2ff00), Green(#94ff3c), Turquoise(#09dea6), Indigo(#000074) and Blue(#0086ff) that can be applied to ggplot2 plot. It can be used in discrete-scale color and fill or continuous-scale color.
+
+# Examples of the Package
+
+## YlGrBl_pal()
+
+```{r ylgrbl-pal}
+ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
+ geom_point(color = YlGrBl_pal()(1))+
+   theme_bw()+
+   labs(x = "Flipper length (mm)",
+        y = "Body Mass (gram)",
+        title = "Relationship between body mass and flipper length of the penguins")
+```
+
+## Example for scale_colour_YlGrBl_d()
+
+```{r scale-colour-YlGrBl-d}
+ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
+geom_point(aes(color = species))+
+scale_colour_YlGrBl_d()+
+  theme_bw()+
+  labs(x = "Flipper length (mm)",
+        y = "Body Mass (gram)",
+        title = "Relationship between body mass and flipper length of the penguins by species")
+```
+
+## Example for scale_fill_YlGrBl_d()
+
+```{r scale-fill-YlGrBl-d}
+ggplot(data = penguins, aes(x = sex, fill = species,))+
+  geom_bar(position = "dodge")+
+  scale_fill_YlGrBl_d()+
+  theme_bw()+
+  labs(x = "Gender",
+        y = "Number of penguins",
+        title = "Number of penguins by body gender and species")
+```
+
+## Example for scale_colour_YlGrBl_seq_c()
+
+```{r scale-colour-YlGrBl-seq}
+ggplot(data = penguins, aes(y = flipper_length_mm, x = bill_length_mm)) +
+  geom_point(aes(color = body_mass_g))+
+  scale_colour_YlGrBl_seq_c(name = 'turquoise', direction = 1, amount = 1)+
+  theme_bw() +
+  labs(x = "Bill Length (mm)",
+       y = "Flipper Length (mm)",
+       color = "Body Mass(g)",
+       title = "Relationship between flippers length to bill length of penguins by body mass")
+
+```
+

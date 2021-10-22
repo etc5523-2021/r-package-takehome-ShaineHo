@@ -60,4 +60,4 @@ scale_colour_YlGrBl_d()+
 #> Warning: Removed 2 rows containing missing values (geom_point).
 ```
 
-<img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
+<img src="man/figures/README-scale-color-discrete-1.png" width="100%" />
