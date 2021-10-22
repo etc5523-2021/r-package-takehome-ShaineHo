@@ -1,10 +1,25 @@
 # This is where functions for your continous scale go
 
-scale_colour_YlGrBl_seq_c <- function(name, direction = 1, amount = 1, ...) {
+#' YlGrBl continuous scales color from YlGrBlPal
+#'
+#' @param name Name of the 5 colors including yellow, green, turquoise, blue, indigo.
+#' @param direction Reverse the luminance of the color at top of scale
+#' @param amount To define the amount of luminance
+#'
+#' @export
+#'
+#' @examples
+#' {library('ggplot2')
+#' ggplot(data = palmerpenguins::penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
+#' geom_point(aes(color = body_mass_g))+
+#' scale_colour_YlGrBl_seq_c(name = 'blue', direction = 1, amount = 1)}
+scale_colour_YlGrBl_seq_c <- function(name, direction = 1, amount = 1) {
 
-  stopifnot(name %in% YlGrBl_colours)
+  colors <- unname(YlGrBl_colours)
 
-  low <-  unname(name)
+  stopifnot(name %in% unlist(names(YlGrBl_colours)))
+
+  low <-  name
 
   high <-  colorspace::lighten(name, amount = amount)
 

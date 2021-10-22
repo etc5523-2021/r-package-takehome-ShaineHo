@@ -1,18 +1,37 @@
 # Define colour palette variables and functions here
-"yellow" = "#f2ff00"
-"green" = "#94ff3c"
-"turquoise" = "#09dea6"
-"blue" = "#0086ff"
-"indigo" = "#000074"
 
 YlGrBl_colours <- list(
   # add your colours as a named list here, i.e.
-  "yellow" = "#f2ff00",
-  "green" = "#94ff3c",
-  "turquoise" = "#09dea6",
+  "indigo" = "#000074",
   "blue" = "#0086ff",
-  "indigo" = "#000074"
+  "turquoise" = "#09dea6",
+  "green" = "#94ff3c",
+  "yellow" = "#f2ff00"
 )
+
+
+#' YlGrBl color scales from YlGrBlPal
+#'
+#' @param direction To change the direction of the return when direction < 1
+#'
+#' @description
+#' `YlGrBl_pal()` returns a set of color string quotes from from YlGrBl Colors.
+#'
+#' @return
+#' \itemize{
+#'   \item yellow - #f2ff00
+#'   \item green - #94ff3c
+#'   \item turquoise - #09dea6
+#'   \item blue - #0086ff
+#'   \item indigo - #000074"
+#'   }
+#'
+#' @export
+#'
+#' @examples
+#' {library('ggplot2')
+#' ggplot(data = palmerpenguins::penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
+#' geom_point(color = YlGrBl_pal()(1))}
 
 
 YlGrBl_pal <- function(direction = 1) {
